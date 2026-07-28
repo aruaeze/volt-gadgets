@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Volt Gadgets — Original Phones, Laptops & Accessories</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0F1115;
+    --surface: #191C22;
+    --surface-2: #20242C;
+    --accent: #2DD4BF;
+    --accent-soft: rgba(45,212,191,0.14);
+    --negotiate: #F5A623;
+    --text: #ECEFF3;
+    --text-muted: #8B93A1;
+    --whatsapp: #25D366;
+    --whatsapp-soft: rgba(37,211,102,0.1);
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+  *{ box-sizing: border-box; }
+  body{ margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.5; }
+  a{ color: inherit; }
+  :focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .topbar{ max-width: 1100px; margin: 0 auto; padding: 26px 24px 0; }
+  .brand{ font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; }
+
+  /* ---------- Hero ---------- */
+  .hero{ position: relative; text-align: center; padding: 90px 24px 70px; overflow: hidden; }
+  .hero::before{
+    content: ""; position: absolute; top: -140px; left: 50%; transform: translateX(-50%);
+    width: 480px; height: 480px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(45,212,191,0.28), transparent 70%);
+    filter: blur(6px); z-index: 0; animation: pulseGlow 6s ease-in-out infinite;
+  }
+  @keyframes pulseGlow{
+    0%, 100% { opacity: 0.55; transform: translateX(-50%) scale(1); }
+    50% { opacity: 1; transform: translateX(-50%) scale(1.08); }
+  }
+  .hero > *{ position: relative; z-index: 1; }
+  .badge{
+    display: inline-flex; align-items: center; gap: 8px; background: var(--accent-soft); color: var(--accent);
+    padding: 7px 16px; border-radius: 999px; font-size: 0.83rem; font-weight: 600; margin-bottom: 22px;
+  }
+  .badge .dot{ width: 8px; height: 8px; border-radius: 50%; background: var(--whatsapp); box-shadow: 0 0 0 3px rgba(37,211,102,0.25); }
+  .hero h1{
+    font-family: var(--font-display); font-weight: 700; font-size: clamp(2.2rem, 6vw, 3.4rem);
+    margin: 0 0 16px; letter-spacing: -0.02em;
+  }
+  .hero-sub{
+    color: var(--text-muted); font-size: 1.02rem; max-width: 480px; margin: 0 auto 34px;
+  }
+  .cta-row{ display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .cta-primary{
+    background: var(--accent); color: #0F1115; font-weight: 700; padding: 14px 28px; border-radius: 999px;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.98rem;
+    animation: ctaPulse 2.6s ease-in-out infinite; transition: transform 0.15s ease;
+  }
+  .cta-primary:hover{ transform: translateY(-2px); }
+  @keyframes ctaPulse{
+    0% { box-shadow: 0 0 0 0 rgba(45,212,191,0.45); }
+    70% { box-shadow: 0 0 0 14px rgba(45,212,191,0); }
+    100% { box-shadow: 0 0 0 0 rgba(45,212,191,0); }
+  }
+  .cta-secondary{
+    background: transparent; border: 1px solid var(--whatsapp); color: var(--whatsapp); font-weight: 700;
+    padding: 13px 26px; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center;
+    gap: 8px; font-size: 0.98rem; transition: background 0.15s ease;
+  }
+  .cta-secondary:hover{ background: var(--whatsapp-soft); }
+
+  /* ---------- Value strip ---------- */
+  .value-strip{ max-width: 1000px; margin: 0 auto; padding: 50px 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 760px){ .value-strip{ grid-template-columns: 1fr; } }
+  .value-card{ background: var(--surface); border-radius: 16px; padding: 24px; text-align: center; border: 1px solid rgba(236,239,243,0.06); }
+  .value-icon{ font-size: 1.7rem; margin-bottom: 10px; }
+  .value-title{ font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; margin-bottom: 6px; }
+  .value-desc{ color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin: 0; }
+
+  /* ---------- Featured ---------- */
+  .featured-section{ max-width: 1000px; margin: 0 auto; padding: 20px 24px 66px; text-align: center; }
+  .featured-section h2{ font-family: var(--font-display); font-size: 1.5rem; margin: 0 0 6px; }
+  .featured-section .sub{ color: var(--text-muted); font-size: 0.9rem; margin: 0 0 30px; }
+  .featured-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; text-align: left; margin-bottom: 30px; }
+  .featured-card{ background: var(--surface); border-radius: 16px; padding: 14px; border: 1px solid rgba(236,239,243,0.06); }
+  .featured-img{ width: 100%; height: 92px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; background: var(--surface-2); display: block; }
+  .featured-icon{ width: 44px; height: 44px; border-radius: 10px; background: var(--surface-2); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 10px; }
+  .featured-name{ font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; }
+  .featured-price{ font-family: var(--font-mono); color: var(--accent); font-size: 0.88rem; }
+  .loading-text{ color: var(--text-muted); font-size: 0.88rem; grid-column: 1 / -1; text-align: center; }
+
+  /* ---------- Final CTA ---------- */
+  .final-cta{ text-align: center; padding: 64px 24px; background: var(--surface); border-top: 1px solid rgba(236,239,243,0.06); border-bottom: 1px solid rgba(236,239,243,0.06); }
+  .final-cta h2{ font-family: var(--font-display); font-size: 1.6rem; margin: 0 0 22px; }
+
+  footer{ text-align: center; padding: 26px; color: var(--text-muted); font-size: 0.8rem; }
+  footer a{ color: var(--whatsapp); text-decoration: none; font-weight: 600; }
+
+  @media (prefers-reduced-motion: reduce){ *{ animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <span class="brand">Volt Gadgets</span>
+</header>
+
+<section class="hero">
+  <span class="badge"><span class="dot"></span> Phones · Laptops · Audio · Accessories</span>
+  <h1>Your Price, Your Way.</h1>
+  <p class="hero-sub">Original gadgets, no fixed-price pressure. Pay instantly online, or negotiate it out on WhatsApp — you choose.</p>
+  <div class="cta-row">
+    <a class="cta-primary" href="volt-gadgets-store.html">Shop Now →</a>
+    <a class="cta-secondary" id="waHeroBtn" href="#" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+  </div>
+</section>
+
+<section class="value-strip">
+  <div class="value-card">
+    <div class="value-icon">🤝</div>
+    <div class="value-title">Negotiate Your Price</div>
+    <p class="value-desc">Make an offer on any item and settle it over WhatsApp — no fixed-price pressure.</p>
+  </div>
+  <div class="value-card">
+    <div class="value-icon">💳</div>
+    <div class="value-title">Instant Online Payment</div>
+    <p class="value-desc">Skip the back-and-forth — pay the listed price securely and check out in seconds.</p>
+  </div>
+  <div class="value-card">
+    <div class="value-icon">⚡</div>
+    <div class="value-title">Original Gadgets Only</div>
+    <p class="value-desc">Phones, laptops, audio, wearables & accessories — all genuine, every time.</p>
+  </div>
+</section>
+
+<section class="featured-section">
+  <h2>Featured Right Now</h2>
+  <p class="sub">A quick look at what's in stock.</p>
+  <div class="featured-grid" id="featuredGrid">
+    <p class="loading-text">Loading…</p>
+  </div>
+  <a class="cta-primary" href="volt-gadgets-store.html">View Full Range →</a>
+</section>
+
+<section class="final-cta">
+  <h2>Ready to find your next gadget?</h2>
+  <a class="cta-primary" href="volt-gadgets-store.html">Shop Now →</a>
+</section>
+
+<footer>
+  Volt Gadgets · <a id="waFooterLink" href="#" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+  // ============================================================
+  const STORE_NAME = "Volt Gadgets";
+
+  // Same WhatsApp number as the store — keep these in sync.
+  const WHATSAPP_NUMBER = "2349055007774";
+
+  const CURRENCY = "₦";
+
+  // Same Supabase project as the store — read-only here, just for the featured teaser.
+  const SUPABASE_URL = "https://wxnmoipvhenxafvyyfdw.supabase.co";
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind4bm1vaXB2aGVueGFmdnl5ZmR3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUxMDc5MzksImV4cCI6MjEwMDY4MzkzOX0.PMChBRpwrk97Dosm__j-LiJDEREFXSMFcXnRygd05-o";
+  // ============================================================
+
+  let sb = null;
+  try {
+    if (window.supabase && typeof window.supabase.createClient === "function"){
+      sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    }
+  } catch (e){ console.error(e); }
+
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, function(c){
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+    });
+  }
+
+  function fmt(n){ return CURRENCY + Math.round(n).toLocaleString(); }
+
+  function handleImgError(imgEl){
+    const emoji = imgEl.getAttribute("data-fallback") || "📦";
+    const div = document.createElement("div");
+    div.className = "featured-icon";
+    div.textContent = emoji;
+    imgEl.replaceWith(div);
+  }
+
+  async function loadFeatured(){
+    const grid = document.getElementById("featuredGrid");
+    if (!sb){ grid.closest(".featured-section").style.display = "none"; return; }
+    try {
+      const { data, error } = await sb.from("products").select("*").eq("featured", true).eq("in_stock", true).limit(4);
+      if (error) throw error;
+      if (!data || data.length === 0){ grid.closest(".featured-section").style.display = "none"; return; }
+
+      grid.innerHTML = data.map(p => {
+        const images = Array.isArray(p.images) ? p.images : [];
+        const media = images[0]
+          ? `<img src="${escapeHtml(images[0])}" alt="${escapeHtml(p.name)}" class="featured-img" data-fallback="${escapeHtml(p.emoji || '📦')}" onerror="handleImgError(this)" />`
+          : `<div class="featured-icon">${escapeHtml(p.emoji || "📦")}</div>`;
+        return `
+          <div class="featured-card">
+            ${media}
+            <div class="featured-name">${escapeHtml(p.name)}</div>
+            <div class="featured-price">${fmt(Number(p.price))}</div>
+          </div>
+        `;
+      }).join("");
+    } catch (e){
+      console.error(e);
+      grid.closest(".featured-section").style.display = "none";
+    }
+  }
+
+  (function init(){
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi " + STORE_NAME + ", I have a question about your products.")}`;
+    document.getElementById("waHeroBtn").href = waUrl;
+    document.getElementById("waFooterLink").href = waUrl;
+    loadFeatured();
+  })();
+</script>
+
+</body>
+</html>
