@@ -299,7 +299,7 @@ You are free to use, modify, and distribute it in accordance with the license.
 Eze Arua
 
 GitHub: https://github.com/aruaeze
-Twitter: x.com/datguyeze
+Twitter: https://x.com/datguyeze
 ---
 
 Made with ❤️ by Big Eze 🦅💎
