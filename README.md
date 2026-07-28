@@ -4,6 +4,21 @@ A modern e-commerce storefront built with HTML, CSS, JavaScript, Supabase, and P
 
 ---
 
+🌐 Live Demo
+Storefront
+👉 https://voltgadgetstore.netlify.app/
+🔑 Demo Admin Access
+Visitors can explore the admin dashboard using the demo account below.
+Admin URL
+https://voltgadgetstore.netlify.app/#admin
+Email
+93fle4ypxk@gmeenramy.com
+Password
+123456
+Note: This is a demo account intended for exploring the dashboard. Please avoid deleting or modifying existing products and orders.
+
+----
+
 ✨ Features
 
 🛍 Customer Storefront
